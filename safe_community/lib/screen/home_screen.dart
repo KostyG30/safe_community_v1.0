@@ -17,10 +17,9 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _screens = [
     const ComplaintsScreen(),
     const ProposalsScreen(),
+    const RoutesScreen(),
     const MapScreen(),
-    const RoutesScreen()
   ];
-
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -31,11 +30,14 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
             appBar: AppBar(
-      title: Text("Безпечна громада"),
-      foregroundColor: Colors.white,
-      centerTitle: true,
-      backgroundColor: Colors.blueAccent,
+      title: Row(
+        children: [
+          Icon(Icons.menu_book),
+          const Text("Безпечна громада")
+        ],
       ),
+      ),
+          
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
@@ -43,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
         unselectedItemColor: Colors.white,
         unselectedFontSize: 12,
         selectedItemColor: Colors.white,
+        
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.report_problem, color: Colors.white), label: "Скарги", backgroundColor: Colors.blueAccent),
           BottomNavigationBarItem(icon: Icon(Icons.lightbulb, color: Colors.white), label: "Пропозиції", backgroundColor: Colors.blueAccent),
@@ -50,6 +53,6 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.map, color: Colors.white), label: "Інтерактивна карта", backgroundColor: Colors.blueAccent),
         ],
       ),
-    );
+      );
   }
 }
