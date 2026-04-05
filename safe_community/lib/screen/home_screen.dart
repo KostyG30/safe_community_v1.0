@@ -31,11 +31,14 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            appBar: AppBar(
-      title: Row(
+      appBar: AppBar(
+      title:  Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.menu_book),
-          const Text("Безпечна громада")
+          Image.asset('assets/SafeLogo.png', 
+          fit: BoxFit.contain,
+          width: 20)
         ],
       ),
       ),
