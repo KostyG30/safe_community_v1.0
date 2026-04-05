@@ -31,22 +31,23 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.greenAccent,
       appBar: AppBar(
-      toolbarHeight: 165,
+      toolbarHeight: 168,
       backgroundColor: Colors.transparent,
       title: Row(
         children: [
       Image.asset('assets/SafeLogo.png', 
-        fit: BoxFit.contain, width: 180),
+        fit: BoxFit.contain, width: 175),
         SizedBox(width: 10),
-        Text("Безпечна громада", style: TextStyle(fontSize: 30)),
+        Text("Безпечна громада", style: TextStyle(fontSize: 30, color: Colors.white)),
       ]
       ),
       flexibleSpace: Container(
         decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [Colors.blue, Colors.white], 
-          begin: AlignmentGeometry.bottomLeft,
-          end: AlignmentGeometry.bottomRight
+          gradient: LinearGradient(colors: [Colors.lightBlueAccent, Colors.blueAccent], 
+          begin: AlignmentGeometry.center,
+          end: AlignmentGeometry.bottomEnd
           )
           )
         ),
