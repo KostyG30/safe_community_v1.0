@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class Main_menu extends StatelessWidget {
   const Main_menu({super.key});
 
